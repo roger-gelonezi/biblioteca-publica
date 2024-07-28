@@ -4,7 +4,7 @@ Este é um projeto Open Source desenvolvido pelos alunos da UNIVESP com o objeti
 
 ## Sobre o Projeto
 
-A Biblioteca Online da UNIVESP visa proporcionar uma experiência amigável e eficiente para os usuários, permitindo que eles:
+A Biblioteca Pública visa proporcionar uma experiência amigável e eficiente para os usuários, permitindo que eles:
 - Pesquisem e encontrem obras disponíveis no acervo.
 - Visualizem detalhes sobre cada obra, como autor, resumo e disponibilidade.
 - Realizem empréstimos e reservas diretamente pela plataforma.
