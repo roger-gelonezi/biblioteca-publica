@@ -48,11 +48,39 @@ UNIVESP - Pólo de Lençóis Paulista
 Turma DRP05-PJI240-SALA-003GRUPO-010
 
 <a href="https://github.com/rogerio-gelonezi">
- <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/16666966?v=4" width="100px;" alt=""/>
- <br />
- <sub><b>Roger Gelonezi</b></sub></a>
-
+<img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/16666966?v=4" width="100px;" alt=""/>
+<br />
+<sub><b>Roger Gelonezi</b></sub></a>
+<br />
 Dev with ❤️
 
 [![Linkedin Badge](https://img.shields.io/badge/-Roger-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/rogeriogelonezi/)](https://www.linkedin.com/in/rogeriogelonezi/) 
 [![Gmail Badge](https://img.shields.io/badge/-rogeriogelonezi@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:rogeriogelonezi@gmail.com)](mailto:rogeriogelonezi@gmail.com)
+<br />
+
+
+<a href="https://github.com/Mauroleao">
+<img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/91487092?v=4" width="100px;" alt=""/>
+<br />
+<sub><b>Mauro Leão</b></sub></a>
+<br />
+
+[![Linkedin Badge](https://img.shields.io/badge/-Mauro-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/mauro-s%C3%A9rgio-bouwman-le%C3%A3o-b62b41260/)](https://www.linkedin.com/in/mauro-s%C3%A9rgio-bouwman-le%C3%A3o-b62b41260/)
+
+
+<a href="https://github.com/leandro2206">
+<img style="border-radius: 50%;" src="https://media.licdn.com/dms/image/D4D03AQF7iL182-PeFA/profile-displayphoto-shrink_200_200/0/1706721638936?e=1727913600&v=beta&t=FR4GifBaX0b4fOxoCE4hXEQlsBi1CATPD1TScgUMJTQ" width="100px;" alt=""/>
+<br />
+<sub><b>Leandro Rebelatto</b></sub></a>
+<br />
+
+[![Linkedin Badge](https://img.shields.io/badge/-Leandro-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/leandro-roberto-r-24389852/)](https://www.linkedin.com/in/leandro-roberto-r-24389852/)
+
+
+<a href="https://github.com/leonardo16silva12">
+<img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/55456319?v=4" width="100px;" alt=""/>
+<br />
+<sub><b>Leonardo Silva</b></sub></a>
+<br />
+
+[![Linkedin Badge](https://img.shields.io/badge/-Leonardo-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/leonardo16silva12/)](https://www.linkedin.com/in/leonardo16silva12/)
