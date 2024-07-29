@@ -47,7 +47,7 @@ UNIVESP - Pólo de Lençóis Paulista
 
 Turma DRP05-PJI240-SALA-003GRUPO-010
 
-<a href="https://github.com/rogerio-gelonezi">
+<a href="https://github.com/roger-gelonezi">
 <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/16666966?v=4" width="100px;" alt=""/>
 <br />
 <sub><b>Roger Gelonezi</b></sub></a>
