@@ -11,6 +11,7 @@ A Biblioteca Pública visa proporcionar uma experiência amigável e eficiente p
 - Acessem materiais digitais, quando disponíveis.
 
 ## Funcionalidades
+- **Cadastro Facilitado:** Os metadados das obras terão cadastro facilitado através de integração com o Google Books API.
 - **Pesquisa Avançada:** Os usuários podem buscar por título, autor, categoria e outros critérios.
 - **Detalhes das Obras:** Cada obra possui uma página com informações detalhadas.
 - **Empréstimos e Reservas:** Os associados podem verificar disponibilidade, solicitar empréstimos e realizar reservas online.
