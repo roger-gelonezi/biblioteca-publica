@@ -63,7 +63,8 @@ Turma DRP05-PJI240-SALA-003GRUPO-010
 <br />
 <b>Mauro Leão</b></a>
 
-[![Linkedin Badge](https://img.shields.io/badge/-Mauro-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/mauro-s%C3%A9rgio-bouwman-le%C3%A3o-b62b41260/)](https://www.linkedin.com/in/mauro-s%C3%A9rgio-bouwman-le%C3%A3o-b62b41260/)
+[![Gmail Badge](https://img.shields.io/badge/-bouwmanleao@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:bouwmanleao@gmail.com)](mailto:bouwmanleao@gmail.com)
+</br>
 
 
 <a href="https://github.com/leandro2206">
