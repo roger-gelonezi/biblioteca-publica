@@ -1,5 +1,6 @@
 # Biblioteca Pública
 
+
 Este é um projeto Open Source desenvolvido pelos alunos da UNIVESP com o objetivo de criar uma plataforma online para disponibilizar o acervo de uma biblioteca pública. A ideia é facilitar o acesso dos associados a livros, artigos e outros materiais de forma prática e conveniente.
 
 ## Sobre o Projeto
