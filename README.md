@@ -43,6 +43,12 @@ A Biblioteca Pública visa proporcionar uma experiência amigável e eficiente p
 
 Este projeto é aberto a contribuições! Se você é estudante da UNIVESP ou entusiasta de tecnologia, sinta-se à vontade para colaborar.
 
+1. Faça um fork deste repositório.
+2. Crie uma branch para a sua feature (git checkout -b feature/nome-da-feature).
+3. Commit suas mudanças (git commit -m 'Adiciona nova feature').
+4. Faça um push para a branch (git push origin feature/nome-da-feature).
+5. Abra um Pull Request.
+
 ## Autores
 
 UNIVESP - Pólo de Lençóis Paulista
@@ -87,3 +93,11 @@ Turma DRP05-PJI240-SALA-003GRUPO-010
 
 [![Linkedin Badge](https://img.shields.io/badge/-Leonardo-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/leonardo16silva12/)](https://www.linkedin.com/in/leonardo16silva12/)
 
+
+<a href="https://github.com/rodrigopasquarella">
+<img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/77204819?v=4" width="100px;" alt=""/>
+<br />
+<b>Rodrigo Pasquarella</b></a>
+<br />
+
+[![Linkedin Badge](https://img.shields.io/badge/-Leonardo-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/rodrigo-pasquarella-134127201/)](https://www.linkedin.com/in/rodrigo-pasquarella-134127201/)
