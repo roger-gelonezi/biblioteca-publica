@@ -1,3 +1,10 @@
 from django.contrib import admin
 
-# Register your models here.
+
+from apps.livros.models import Livro
+
+class ListarLivros(admin.ModelAdmin):
+    list_display = ("id", "categoria", "titulo")
+    list_per_page = 10
+
+admin.site.register(Livro, ListarLivros)

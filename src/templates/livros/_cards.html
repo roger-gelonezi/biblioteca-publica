@@ -1,0 +1,31 @@
+{% load static %}
+{% load humanize %}
+
+<div class="container mt-3">
+  <div class="list-group">
+    {% if cards %}
+      {% for livro in cards %}
+        <div class="list-group-item mb-3 d-flex">
+          <a href="{% url 'livro' livro.id %}">
+            {% if livro.foto_capa %}
+              <img class="img-fluid img-thumbnail rounded" src="{{ livro.foto_capa.url }}" width="200" alt="foto" />
+            {% else %}
+              <img class="img-fluid img-thumbnail rounded" src="{% static 'assets/imagens/foto404.png' %}" alt="capa do livro" />
+            {% endif %}
+          </a>
+          <div class="ms-3 d-flex flex-column">
+            <h5 class="mb-1 fw-bold">{{ livro.titulo }}</h5>
+            <p class="mb-1">{{ livro.autor }}</p>
+            <small>{{ livro.resumo }}</small>
+          </div>
+          <div class="d-grid gap-2 d-md-block mt-auto">
+            <button type="button" class="btn btn-outline-primary mt-4">
+              <i class="bi bi-book"></i>
+              Ler
+            </button>
+          </div>
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+</div>
