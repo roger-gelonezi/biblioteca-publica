@@ -1,7 +1,9 @@
 from pathlib import Path, os
 from dotenv import load_dotenv
+import pymysql
 
 load_dotenv()
+pymysql.install_as_MySQLdb()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -29,6 +31,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.sessions",
     "django.contrib.staticfiles",
+    "storages",
     "apps.livros.apps.LivrosConfig",
 ]
 
@@ -66,10 +69,19 @@ WSGI_APPLICATION = "setup.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+MYSQL_DATABASE = str(os.getenv("MYSQL_DATABASE"))
+MYSQL_USER = str(os.getenv("MYSQL_USER"))
+MYSQL_PASSWORD = str(os.getenv("MYSQL_PASSWORD"))
+MYSQL_HOST = str(os.getenv("MYSQL_HOST"))
+MYSQL_PORT = str(os.getenv("MYSQL_PORT"))
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": MYSQL_DATABASE,
+        "USER": MYSQL_USER,
+        "PASSWORD": MYSQL_PASSWORD,
+        "HOST": MYSQL_HOST,
+        "PORT": MYSQL_PORT,
     }
 }
 
@@ -104,8 +116,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-# AWS Configuração
-
+# AWS
 AWS_ACCESS_KEY_ID = str(os.getenv("AWS_ACCESS_KEY_ID"))
 
 AWS_SECRET_ACCESS_KEY = str(os.getenv("AWS_SECRET_ACCESS_KEY"))
@@ -127,21 +138,18 @@ AWS_HEADERS = {"Access-Control-Allow-Origin": "*"}
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
-
-STATICFILES_STORAGE = "storages.backends.s3boto3.S3StaticStorage"
-
+# Static and media file configuration
+STORAGES = {
+    "default": {
+        "BACKEND": "storages.backends.s3.S3Storage",
+    },
+    "staticfiles": {
+        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+    },
+}
 STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/static/"
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "setup/static")]
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
-
-# Media
-
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-
-MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/media/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

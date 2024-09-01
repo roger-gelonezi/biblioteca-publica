@@ -1,7 +1,7 @@
 services:
   web:
     build:
-      context: src
+      context: ../src
       target: builder
     environment:
       - name=biblioteca-publica
