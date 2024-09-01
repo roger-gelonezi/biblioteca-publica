@@ -132,41 +132,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <script>
-        const defaultTexts = {
-            'dropdownMenuButton1': 'Qualquer visualização',
-            'dropdownMenuButton2': 'Qualquer documento',
-            'dropdownMenuButton3': 'Em qualquer data'
-        };
-
-        function checkIfDefault() {
-            let allDefault = true;
-            for (const [id, text] of Object.entries(defaultTexts)) {
-                const dropdownToggle = document.getElementById(id);
-                if (dropdownToggle.textContent !== text) {
-                    allDefault = false;
-                    break;
-                }
-            }
-            document.getElementById('resetButton').style.display = allDefault ? 'none' : 'block';
-        }
-
-        document.querySelectorAll('.dropdown-menu .dropdown-item').forEach(item => {
-            item.addEventListener('click', function (event) {
-                event.preventDefault();
-                const dropdownToggle = this.closest('.dropdown').querySelector('.dropdown-toggle');
-                dropdownToggle.textContent = this.getAttribute('data-value');
-                checkIfDefault();
-            });
-        });
-
-        document.getElementById('resetButton').addEventListener('click', function () {
-            for (const [id, text] of Object.entries(defaultTexts)) {
-                document.getElementById(id).textContent = text;
-            }
-            checkIfDefault();
-        });
-    </script>
 </body>
 
 </html>
