@@ -1,0 +1,58 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+  <div class="container mt-3">
+    <div class="list-group-item mb-3 d-flex">
+      {% if livro.thumbnail %}
+        <img class="img-fluid img-thumbnail rounded" src="{{ livro.thumbnail.url }}" alt="Capa do livro" />
+      {% else %}
+        <img class="img-fluid img-thumbnail rounded" src="{% static 'assets/imagens/livro_404.png' %}" alt="Capa do livro não encontrada" />
+      {% endif %}
+      <div class="ms-3 d-flex flex-column">
+        <h1>{{ livro.title }}</h1>
+        <h6>{{ livro.subtitle }}</h6>
+        <p>Por {{ livro.authors|join:', ' }}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Sobre esta edição</h5>
+            <ul class="list-unstyled">
+              <li>
+                <strong>Autores e Tradutores:</strong> {{ livro.authors|join:', ' }}
+              </li>
+              <li>
+                <strong>Categorias:</strong> {{ livro.categories|join:', ' }}
+              </li>
+              <li>
+                <strong>Idioma:</strong> {{ livro.language }}
+              </li>
+              <li>
+                <strong>Editora:</strong> {{ livro.publisher }}
+              </li>
+              <li>
+                <strong>Data da publicação:</strong> {{ livro.published_date }}
+              </li>
+              <li>
+                <strong>Número de páginas:</strong> {{ livro.page_count|intcomma }}
+              </li>
+              <li>
+                <strong>ISBN:</strong> {{ livro.isbn_10|default:'' }}, {{ livro.isbn_13|default:'' }}
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Descrição</h5>
+            <p>{{ livro.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

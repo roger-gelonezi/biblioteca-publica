@@ -18,27 +18,11 @@ class Livro(Model):
     published_date = DateField(null=True, blank=True)
     description = TextField(null=True, blank=True)
     page_count = IntegerField(null=True)
-    printed_page_count = IntegerField(null=True)
     categories = ListTextField(
         base_field=CharField(max_length=100), null=True, blank=True
     )
     language = CharField(max_length=10, null=True, blank=True)
-    small_thumbnail = ImageField(
-        upload_to="fotos/%Y/%m/%d/", null=True, blank=True, max_length=500
-    )
     thumbnail = ImageField(
-        upload_to="fotos/%Y/%m/%d/", null=True, blank=True, max_length=500
-    )
-    small = ImageField(
-        upload_to="fotos/%Y/%m/%d/", null=True, blank=True, max_length=500
-    )
-    medium = ImageField(
-        upload_to="fotos/%Y/%m/%d/", null=True, blank=True, max_length=500
-    )
-    large = ImageField(
-        upload_to="fotos/%Y/%m/%d/", null=True, blank=True, max_length=500
-    )
-    extra_large = ImageField(
         upload_to="fotos/%Y/%m/%d/", null=True, blank=True, max_length=500
     )
     isbn_13 = CharField(max_length=13, null=True, blank=True)
