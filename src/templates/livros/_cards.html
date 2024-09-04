@@ -1,6 +1,5 @@
 {% load static %}
 {% load humanize %}
-
 <div class="container mt-3">
   <div class="list-group">
     {% if cards %}
@@ -8,14 +7,14 @@
         <div class="list-group-item mb-3 d-flex">
           <a href="{% url 'livro' livro.id %}">
             {% if livro.thumbnail %}
-              <img class="img-fluid img-thumbnail rounded" src="{{ livro.thumbnail.url }}" width="200" alt="Capa do livro" />
+              <img class="img-fluid img-thumbnail rounded" src="{{ livro.thumbnail.url }}" max-width="200" alt="Capa do livro" />
             {% else %}
               <img class="img-fluid img-thumbnail rounded" src="{% static 'assets/imagens/livro_404.png' %}" alt="Capa do livro não encontrada" />
             {% endif %}
           </a>
           <div class="ms-3 d-flex flex-column">
             <h5 class="mb-1 fw-bold">{{ livro.title }}</h5>
-            <p class="mb-1">{{ livro.authors }}</p>
+            <p class="mb-1">{{ livro.authors|join:', ' }}</p>
             <small>{{ livro.subtitle }}</small>
           </div>
         </div>
