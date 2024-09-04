@@ -1,9 +1,45 @@
-from django.db import models
+from django.db.models import (
+    CharField,
+    Model,
+    IntegerField,
+    ImageField,
+    DateField,
+    TextField,
+)
+from django_mysql.models import ListTextField
 
 
-class Livro(models.Model):
-    categoria = models.CharField(max_length=100)
-    titulo = models.CharField(max_length=100)
-    foto_capa = models.ImageField(upload_to="fotos/%Y/%m/%d/", null=False)
-    autor = models.CharField(max_length=100)
-    resumo = models.CharField(max_length=100, null=False, blank=False)
+class Livro(Model):
+    google_books_id = CharField(max_length=50, unique=True, null=True, blank=True)
+    title = CharField(max_length=100)
+    subtitle = CharField(max_length=100, null=True, blank=True)
+    authors = ListTextField(base_field=CharField(max_length=50), null=True, blank=True)
+    publisher = CharField(max_length=50, null=True, blank=True)
+    published_date = DateField(null=True, blank=True)
+    description = TextField(null=True, blank=True)
+    page_count = IntegerField(null=True)
+    printed_page_count = IntegerField(null=True)
+    categories = ListTextField(
+        base_field=CharField(max_length=100), null=True, blank=True
+    )
+    language = CharField(max_length=10, null=True, blank=True)
+    small_thumbnail = ImageField(
+        upload_to="fotos/%Y/%m/%d/", null=True, blank=True, max_length=500
+    )
+    thumbnail = ImageField(
+        upload_to="fotos/%Y/%m/%d/", null=True, blank=True, max_length=500
+    )
+    small = ImageField(
+        upload_to="fotos/%Y/%m/%d/", null=True, blank=True, max_length=500
+    )
+    medium = ImageField(
+        upload_to="fotos/%Y/%m/%d/", null=True, blank=True, max_length=500
+    )
+    large = ImageField(
+        upload_to="fotos/%Y/%m/%d/", null=True, blank=True, max_length=500
+    )
+    extra_large = ImageField(
+        upload_to="fotos/%Y/%m/%d/", null=True, blank=True, max_length=500
+    )
+    isbn_13 = CharField(max_length=13, null=True, blank=True)
+    isbn_10 = CharField(max_length=10, null=True, blank=True)

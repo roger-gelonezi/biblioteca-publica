@@ -3,14 +3,14 @@ from apps.livros.models import Livro
 
 
 def index(request):
-    livros = Livro.objects.order_by("categoria", "titulo")
+    livros = Livro.objects.order_by("title")
     return render(request, "livros/index.html", {"cards": livros})
 
 
 def buscar(request):
-    livros = Livro.objects.order_by("categoria", "titulo")
+    livros = Livro.objects.order_by("title")
     return render(request, "livros/index.html", {"cards": livros})
 
 def livro(request, livro_id):
-    livros = Livro.objects.order_by("categoria", "titulo")
+    livros = Livro.objects.order_by("title")
     return render(request, "livros/index.html", {"cards": livros})
