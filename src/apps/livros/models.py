@@ -25,5 +25,5 @@ class Livro(Model):
     thumbnail = ImageField(
         upload_to="fotos/%Y/%m/%d/", null=True, blank=True, max_length=500
     )
-    isbn_13 = CharField(max_length=13, null=True, blank=True)
-    isbn_10 = CharField(max_length=10, null=True, blank=True)
+    thumbnail_external_url = CharField(max_length=500, null=True, blank=True)
+    isbns = ListTextField(base_field=CharField(max_length=30), null=True, blank=True)

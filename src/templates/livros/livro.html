@@ -7,7 +7,11 @@
       {% if livro.thumbnail %}
         <img class="img-fluid img-thumbnail rounded" src="{{ livro.thumbnail.url }}" alt="Capa do livro" />
       {% else %}
-        <img class="img-fluid img-thumbnail rounded" src="{% static 'assets/imagens/livro_404.png' %}" alt="Capa do livro não encontrada" />
+        {% if livro.thumbnail_external_url %}
+          <img class="img-fluid img-thumbnail rounded" src="{{ livro.thumbnail_external_url }}" max-width="200" alt="Capa do livro" />
+        {% else %}
+          <img class="img-fluid img-thumbnail rounded" src="{% static 'assets/imagens/livro_404.png' %}" alt="Capa do livro não encontrada" />
+        {% endif %}
       {% endif %}
       <div class="ms-3 d-flex flex-column">
         <h1>{{ livro.title }}</h1>
