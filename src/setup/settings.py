@@ -2,7 +2,7 @@ from pathlib import Path, os
 from dotenv import load_dotenv
 import pymysql
 
-load_dotenv()
+load_dotenv(override=True)
 pymysql.install_as_MySQLdb()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -69,11 +69,11 @@ WSGI_APPLICATION = "setup.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+MYSQL_HOST = str(os.getenv("MYSQL_HOST_AWS"))
+MYSQL_PORT = str(os.getenv("MYSQL_PORT"))
 MYSQL_DATABASE = str(os.getenv("MYSQL_DATABASE"))
 MYSQL_USER = str(os.getenv("MYSQL_USER"))
-MYSQL_PASSWORD = str(os.getenv("MYSQL_PASSWORD"))
-MYSQL_HOST = str(os.getenv("MYSQL_HOST"))
-MYSQL_PORT = str(os.getenv("MYSQL_PORT"))
+MYSQL_PASSWORD = str(os.getenv("MYSQL_PASSWORD_AWS"))
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
@@ -148,7 +148,6 @@ STORAGES = {
     },
 }
 STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/static/"
-
 
 
 # Default primary key field type

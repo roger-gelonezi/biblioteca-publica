@@ -15,7 +15,7 @@ class Livro(Model):
     subtitle = CharField(max_length=100, null=True, blank=True)
     authors = ListTextField(base_field=CharField(max_length=50), null=True, blank=True)
     publisher = CharField(max_length=50, null=True, blank=True)
-    published_date = DateField(null=True, blank=True)
+    published_date = CharField(max_length=50, null=True, blank=True)
     description = TextField(null=True, blank=True)
     page_count = IntegerField(null=True)
     categories = ListTextField(

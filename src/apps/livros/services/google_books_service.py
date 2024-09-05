@@ -7,8 +7,16 @@ def __buscar_por_isbn(isbn):
     response = requests.get(url)
     if response.status_code == 200:
         dados_json = response.json()
+        totalItens = dados_json.get("totalItems", 0)
+        if totalItens == 0:
+            return None
         volume = dados_json.get("items", [])[0]
-        volumeInfo = volume.get("volumeInfo", {})
+
+        selfLink = volume.get("selfLink")
+        response = requests.get(selfLink)
+        dados_json = response.json()
+
+        volumeInfo = dados_json.get("volumeInfo", {})
         volumeInfo["id"] = volume.get("id")
         return volumeInfo
 
@@ -27,12 +35,12 @@ def __salvar_livro(livro):
     livro_model[0].language = livro.get("language", "")
     livro_model[0].thumbnail_external_url = livro.get("imageLinks", {}).get("thumbnail")
     for isbn in livro.get("industryIdentifiers", []):
+        livro_model[0].isbns = []
         livro_model[0].isbns.append(isbn.get("identifier"))
     livro_model[0].save()
 
 
 def importar_google_books(isbn_list):
-    print(isbn_list)
     for isbn in isbn_list:
         livro = __buscar_por_isbn(isbn)
         print(livro)
