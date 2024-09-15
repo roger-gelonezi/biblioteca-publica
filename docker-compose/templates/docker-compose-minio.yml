@@ -1,0 +1,18 @@
+services:
+  minio:
+    image: quay.io/minio/minio:RELEASE.2024-09-13T20-26-02Z
+    command: server /data --console-address ":9001"
+    container_name: minio
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    env_file:
+      - ./docker-compose-minio.env
+    volumes:
+      - ../.environment/minio/data:/data
+      - ../.environment/minio/config:/root/.minio
+    healthcheck:
+      test: [ "CMD", "mc", "ready", "local" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
