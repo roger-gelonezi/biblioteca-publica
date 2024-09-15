@@ -16,9 +16,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = str(os.getenv("SECRET_KEY"))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = str(os.getenv("DEBUG")).lower() == "true"
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [str(os.getenv("ALLOWED_HOSTS"))]
 
 
 # Application definition
@@ -69,11 +69,11 @@ WSGI_APPLICATION = "setup.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-MYSQL_HOST = str(os.getenv("MYSQL_HOST_AWS"))
+MYSQL_HOST = str(os.getenv("MYSQL_HOST"))
 MYSQL_PORT = str(os.getenv("MYSQL_PORT"))
 MYSQL_DATABASE = str(os.getenv("MYSQL_DATABASE"))
 MYSQL_USER = str(os.getenv("MYSQL_USER"))
-MYSQL_PASSWORD = str(os.getenv("MYSQL_PASSWORD_AWS"))
+MYSQL_PASSWORD = str(os.getenv("MYSQL_PASSWORD"))
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
