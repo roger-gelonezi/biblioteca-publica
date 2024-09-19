@@ -43,6 +43,5 @@ def __salvar_livro(livro):
 def importar_google_books(isbn_list):
     for isbn in isbn_list:
         livro = __buscar_por_isbn(isbn)
-        print(livro)
         if livro:
             __salvar_livro(livro)
