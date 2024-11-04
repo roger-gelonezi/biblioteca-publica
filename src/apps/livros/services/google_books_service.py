@@ -34,14 +34,13 @@ def __salvar_livro(livro):
     livro_model[0].categories = livro.get("categories", [])
     livro_model[0].language = livro.get("language", "")
     livro_model[0].thumbnail_external_url = livro.get("imageLinks", {}).get("thumbnail")
+    livro_model[0].isbns = []
     for isbn in livro.get("industryIdentifiers", []):
-        livro_model[0].isbns = []
         livro_model[0].isbns.append(isbn.get("identifier"))
     livro_model[0].save()
 
 
-def importar_google_books(isbn_list):
-    for isbn in isbn_list:
-        livro = __buscar_por_isbn(isbn)
-        if livro:
-            __salvar_livro(livro)
+def importar_google_books(isbn):
+    livro = __buscar_por_isbn(isbn)
+    if livro:
+        __salvar_livro(livro)
