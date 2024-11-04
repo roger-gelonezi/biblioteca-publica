@@ -5,10 +5,10 @@
   <div class="container mt-3">
     <div class="list-group-item mb-3 d-flex">
       {% if livro.thumbnail %}
-        <img class="img-fluid img-thumbnail rounded" src="{{ livro.thumbnail.url }}" alt="Capa do livro" />
+        <img class="img-fluid img-thumbnail rounded" src="{{ livro.thumbnail.url }}" width="120" height="180" alt="Capa do livro" />
       {% else %}
         {% if livro.thumbnail_external_url %}
-          <img class="img-fluid img-thumbnail rounded" src="{{ livro.thumbnail_external_url }}" max-width="200" alt="Capa do livro" />
+          <img class="img-fluid img-thumbnail rounded" src="{{ livro.thumbnail_external_url }}" width="120" height="180" alt="Capa do livro" />
         {% else %}
           <img class="img-fluid img-thumbnail rounded" src="{% static 'assets/imagens/livro_404.png' %}" alt="Capa do livro não encontrada" />
         {% endif %}
@@ -38,13 +38,13 @@
                 <strong>Editora:</strong> {{ livro.publisher }}
               </li>
               <li>
-                <strong>Data da publicação:</strong> {{ livro.published_date }}
+                <strong>Data de publicação:</strong> {{ livro.published_date }}
               </li>
               <li>
                 <strong>Número de páginas:</strong> {{ livro.page_count|intcomma }}
               </li>
               <li>
-                <strong>ISBN:</strong> {{ livro.isbn_10|default:'' }}, {{ livro.isbn_13|default:'' }}
+                <strong>ISBN:</strong> {{ livro.isbns|join:', ' }}
               </li>
             </ul>
           </div>
@@ -56,6 +56,10 @@
             <p>{{ livro.description }}</p>
           </div>
         </div>
+      </div>
+      <div class="mt-2 mb-4 d-flex col-md-8">
+        <a href="{% url 'editar_livro' livro.id %}" class="col-9 p-1"><button class="btn btn-success col-12">Editar</button></a>
+        <a href="{% url 'excluir_livro' livro.id %}" class="col-3 p-1"><button class="btn btn-danger col-12">Excluir</button></a>
       </div>
     </div>
   </div>
